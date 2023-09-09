@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar y Eliminar Libros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modificar y Eliminar Libros</h1>
+    <form action="update.php" method="post">
+        <label for="id">ID:</label>
+        <input type="text" name="id" required><br>
+        <label for="nombre">Nombre del Libro:</label>
+        <input type="text" name="nombre" required><br>
+        <label for="autor">Autor:</label>
+        <input type="text" name="autor" required><br>
+        <label for="isbn">ISBN:</label>
+        <input type="text" name="isbn" required><br>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" rows="4" required></textarea><br>
+        <input type="submit" value="Modificar">
+    </form>
+    
+    <h2>Eliminar Libro</h2>
+    <form action="delete.php" method="post">
+        <label for="id">ID:</label>
+        <input type="text" name="id" required><br>
+        <input type="submit" value="Eliminar">
+    </form>
+</body>
+</html>
