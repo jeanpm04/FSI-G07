@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar Nuevo Libro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insertar Nuevo Libro</h1>
+    <form action="insert.php" method="post">
+        <label for="id">ID:</label>
+        <input type="text" name="id" required><br>
+        <label for="nombre">Nombre del Libro:</label>
+        <input type="text" name="nombre" required><br>
+        <label for="autor">Autor:</label>
+        <input type="text" name="autor" required><br>
+        <label for="isbn">ISBN:</label>
+        <input type="text" name="isbn" required><br>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" rows="4" required></textarea><br>
+        <input type="submit" value="Insertar">
+    </form>
+</body>
+</html>
