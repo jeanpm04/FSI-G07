@@ -16,8 +16,27 @@
                     <option value="1">Usuario 1</option>
                     <option value="2">Usuario 2</option>
                     <option value="3">Usuario 3</option>
+                    <option value="0">Crear Usuario Nuevo</option>
                 </select>
             </div>
+            <!-- Campos para registrar un nuevo usuario -->
+            <div class="form-group-horizontal new-user-fields">
+                <label for="nombres">Nombres:</label>
+                <input type="text" id="nombres" name="nombres">
+            </div>
+            <div class="form-group-horizontal new-user-fields">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos">
+            </div>
+            <div class="form-group-horizontal new-user-fields">
+                <label for="nuevo-dni">DNI:</label>
+                <input type="text" id="nuevo-dni" name="nuevo_dni">
+            </div>
+            <div class="form-group-horizontal new-user-fields">
+                <label for="nuevo-celular">Celular:</label>
+                <input type="text" id="nuevo-celular" name="nuevo_celular">
+            </div>
+            <!-- Fin de los campos para registrar un nuevo usuario -->
             <div class="form-group-horizontal">
                 <label for="habitacion">Habitación:</label>
                 <input type="text" id="habitacion" name="habitacion" required>
@@ -39,5 +58,28 @@
             </div>
         </form>
     </div>
+    <script>
+        // JavaScript para mostrar u ocultar los campos de nuevo usuario según la selección del usuario
+        const usuarioSelect = document.getElementById('usuario');
+        const newuserFields = document.querySelectorAll('.new-user-fields');
+
+        usuarioSelect.addEventListener('change', function () {
+            if (this.value === '0') {
+                // Mostrar campos para crear un nuevo usuario
+                newuserFields.forEach(function (field) {
+                    field.style.display = 'block';
+                });
+                // Cambiar el atributo 'action' del formulario para enviarlo a nuevo_usuario.php
+                document.querySelector('form').setAttribute('action', 'nuevo_usuario.php');
+            } else {
+                // Ocultar campos de nuevo usuario
+                newuserFields.forEach(function (field) {
+                    field.style.display = 'none';
+                });
+                // Cambiar el atributo 'action' del formulario para enviarlo a procesar_reserva.php
+                document.querySelector('form').setAttribute('action', 'procesar_reserva.php');
+            }
+        });
+    </script>
 </body>
 </html>
